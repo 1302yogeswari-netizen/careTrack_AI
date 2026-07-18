@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Vitals - CareTrackAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="logo"> CareTrackAI </div>
+        <nav class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="residents.html">Residents</a>
+            <a href="health.html" class="active">Log Vitals</a>
+            <a href="medicine.html">Medicines</a>
+            <a href="ai.html">AI Analysis</a>
+        </nav>
+    </header>
+
+    <mian class="container">
+        <h2 style="margin-bottom: 1.5rem;">Clinical Vitals Registration</h2>
+
+        <section class="form-container">
+            <h3 style="margin-bottom: 1.25rem; color: var(--primary-color);">Record New Vital Signs</h3>
+            <form id="vitalsForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="vitalResidentSelect">Select Resident</label>
+                        <select id="vitalResidentSelect" required>
+                            <option value="">-- Choose Profile --</option>   
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vitalBP">Blood Pressure (mmHg)</label>
+                        <input type="text" id="vitalBP" required placeholder="e.g. 120/80">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vitalHR">Heart Rate (bpm)</label>
+                        <input type="number" id="vitalHR" required min="30" max="200" placeholder="e.g. 72">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vitalTemp">Temperature (°F)</label>
+                        <input type="number" id="vitalTemp" required step="0.1" min="90" max="110" placeholder="e.g. 98.6"> 
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vitalSpo2">Oxygen Level (SpO2 %)</label>
+                        <input type="number" id="vitalSpo2" required min="50" max="100" placeholder="e.g. 98">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn" style="margin-top: 1rem;">Commit Vitals Entry</button>
+            </form>
+        </section>
+
+        <section>
+            <h3 style="margin-bottom: 1rem;">Recent Vital Log History</h3>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Resident</th>
+                            <th>Blood Pressure</th>
+                            <th>Pulse Rate</th>
+                            <th>Temp / SpO2</th>
+                            <th>Risk State</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vitalsTableBody">
+
+                    </tbody>
+                </table>
+
+            </div>
+        </section>
+    </mian>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
