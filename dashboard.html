@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - careTrackAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo"> CareTrackAI</div>
+        <nav class="nav-links">
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="residents.html">Residents</a>
+            <a href="health.html">Log Vitals</a>
+            <a href="medicine.html">Medicines</a>
+            <a href="ai.html">AI Analysis</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2 style="margin-bottom: 1.5rem;">Facility Overview</h2>
+
+        <section class="metrics-grid">
+            <div class="metric-card">
+                <h3>Total Residents</h3>
+                <div class="number" id="metricTotalResidents">0</div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Critical Alerts</h3>
+                <divc class="number" id="metricCriticalAlerts" style="color: var(--color-critical);">0</div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Adherence Rate</h3>
+                <div class="number" id="metricAdherence">0%</div>
+            </div>
+        </section>
+
+        <section class="alert-list">
+            <h3 style="margin-bottom: 1.25rem; color: var(--text-main);">Active Mediacl Notifications</h3>
+            <div id="alertBoxContainer">
+                <div style="text-align: center; color: var(--text-muted); padding: 1rem;">
+                    Loading system alerts...
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="app.js"></script>
+ 
+</body>
+</html>
