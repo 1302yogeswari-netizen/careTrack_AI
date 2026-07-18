@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Roster - CareTrackAI</title>
+    <link rel = "stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo"> CareTrackAI </div>
+        <nav class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="residents.html" class="active">Residents</a>
+            <a href="health.html">Log Vitals</a>
+            <a href="medicine.html">Medicines</a>
+            <a href="ai.html">AI Analysis</a>
+        </nav>
+    </header>
+    
+    <main class="container">
+       <h2 style="margin-bottom: 1.5rem;">Resident Onboarding & Roster</h2>
+
+       <section class="form-container">
+        <h3 style="margin-bottom: 1.25rem; color: var(--primary-color);">Register New Resident</h3>
+        
+        <form id="residentForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="resName">Full Name</label>
+                    <input type="text" id="resName" required placeholder="e.g. Lakshmi Sharma">
+                </div class="form-group">
+
+                <div class="form-group">
+                    <label for="resAge">Age</label>
+                    <input type="number" id="resAge" required min="1" max="120" placeholder="e.g. 72">
+                </div>
+
+                <div class="form-group">
+                    <label for="resGender">Gender</label>
+                    <select id="resGender" required>
+                        <option value="">-- Select Gender --</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="resBlood">Blood Group</label>
+                    <select id="resBlood" required>
+                        <option value="">-- Select --</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="resRoom">Room Number</label>
+                    <input type="text" id="resRoom" required placeholder="e.g. B-204">   
+                </div>
+
+                <div class="form-group">
+                    <label for="resContact">Emergency Contact Number</label>
+                    <input type="tel" id="resContact" required placeholder="e.g. 9876543210">
+                </div>
+
+            </div>
+
+            <div class="form-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="form-group">
+                    <label for="resCondition">Chronic Conditions / Medical Notes</label>
+                    <input type="text" id="resCondition" placeholder="e.g. Hypertension, Type 2 Diabetes">
+                </div>
+
+                <div class="form-group">
+                    <label for="resAllergies">Known Severe Allergies</label>
+                    <input type="text" id="resAllergies" placeholder="e.g. Penicillin, Peanuts, None">
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn" style="margin-top: 1rem;">Register Resident Profile</button>
+
+        </form>
+       </section>
+
+       <section>
+        <h3 style="margin-bottom: 1rem; color: var(--text-main);">Current Resident Roster</h3>
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age / Gender</th>
+                        <th>Room</th>
+                        <th>Blood Group</th>
+                        <th>Conditions</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="residentTableBody">
+
+                </tbody>
+            </table>
+        </div>
+       </section>
+    </main>
+
+    <script src="app.js"></script>
+    <script src="residents.js"></script>
+</body>
+</html>
