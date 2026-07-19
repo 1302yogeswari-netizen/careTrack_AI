@@ -1,223 +1,242 @@
+/* ==========================================================================
+   CareTrackAI - Master UI Design System (css/style.css)
+   ========================================================================== */
 
-.root{
-    --primary-color: #1e3a8a;
-    --secondary-color: #0d9488;
-    --bg-app: #f8fafc;
-    --bg-card: #ffffff;
-    --border-subtle: #e2e8f0;
-
-    --text-main: #0f172a;
-    --text-muted: #64748b;
-
-    --color-normal: #16a34a;
-    --color-warning: #d97706;
-    --color-critical: #dc2626;
+/* 1. Global Setup & Design Variables */
+:root {
+  /* Dynamic Premium Palette Overhaul */
+  --primary-color: #4f46e5;       /* Royal Midnight Indigo */
+  --primary-light: #eef2ff;       /* Soft Lavender Tint */
+  --text-main: #0f172a;           /* Deep Charcoal Slate */
+  --text-muted: #64748b;          /* Cool Steel Gray */
+  --bg-main: #f8fafc;             /* Clean Canvas Backdrop */
+  --bg-card: #ffffff;             /* Pure White Containers */
+  --border-color: #e2e8f0;        /* Minimalist Borders */
+  
+  /* Vibrant & Attractive Health Status Palette */
+  --color-normal: #10b981;        /* Vivid Emerald */
+  --color-warning: #f59e0b;       /* Amber Gold */
+  --color-critical: #f43f5e;      /* Electric Rose/Red */
+  
+  --shadow-sm: 0 4px 6px -1px rgba(79, 70, 229, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 15px -3px rgba(79, 70, 229, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --radius: 12px;                 /* Slightly softer, modern corners */
 }
 
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-body{
-    background-color: var(--bg-app);
-    color: var(--text-main);
-    line-height: 1.6;
-    padding-bottom: 3rem;
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  padding-bottom: 3rem;
 }
 
-.container{
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1.5rem;
+/* 2. Reusable Header Navigation Bar */
+.navbar {
+  background: linear-gradient(135deg, #312e81 0%, #4f46e5 100%); /* Premium Deep Violet Gradient */
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  box-shadow: var(--shadow-md);
 }
 
-.navbar{
-    background-color: var(--primary-color);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.navbar .logo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  background: linear-gradient(to right, #ffffff, #c7d2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.navbar .logo{
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #ffffff;
+.nav-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
-.nav-links a{
-    color: #cdb5e1;
-    text-decoration: none;
-    margin-left: 1.5rem;
-    font-weight: 500;
-    padding: 0.5rem 0;
-    transition: color 0.2s, border-color 0.2s;
+.nav-links a:hover, 
+.nav-links a.active {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-.nav-links a:hover,
-.nav-links a.active{
-    color: #ffffff;
-    border-bottom: 3px solid var(--secondary-color);
+/* 3. Layout Containment */
+.container {
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
 }
 
-.metrics-grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
+/* 4. Modular Dashboard Cards & Sections */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
-.metric-card{
-    background: var(--bg-card);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-subtle);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    text-align: center;
+.metric-card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.metric-card h3{
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05rem;
-    margin-bottom: 0.5rem;
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
-.metric-card .number{
-    font-size: 2.5rem;
-    font-weight: 700;
+.metric-card h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
-.alert-list{
-    background: var(--bg-card);
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-subtle);
+.metric-card .number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  letter-spacing: -1px;
 }
 
-.alert-item{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.25rem;
-    margin-bottom: 1rem;
-    background-color: #f8fafc;
-    border-radius: 6px;
-    border-left: 5px solid transparent;
+.form-container {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: var(--radius);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2.5rem;
 }
 
-.alert-item.critical{ border-left-color: var(--color-critical); }
-.alert-item.attention{ border-left-color: var(--color-warning); }
-.alert-item.normal{ border-left-color: var(--color-normal); }
-
-.form-container{
-    background: var(--bg-card);
-    padding:2rem;
-    border-radius: 8px;
-    border: 1px solid var(--border-subtle);
-    margin-bottom: 3rem;
+/* 5. Clean, Professional Forms styling */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
-.form-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.25rem;
-    margin-bottom: 1.5rem;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
-.form-group{
-    display: flex;
-    flex-direction: column;
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-main);
 }
 
-.form-group label{
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-main);
+.form-group input, 
+.form-group select {
+  padding: 0.75rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  outline: none;
+  transition: all 0.2s ease;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea{
-    padding: 0.75rem;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font-size: 1rem;
-    color: var(--text-main);
-    background-color: #ffffff;
+.form-group input:focus, 
+.form-group select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
 }
 
-.form-group input:focus,
-.form-group select:focus{
-    outline: 2px solid var(--secondary-color);
+/* 6. Buttons & User Actions */
+.btn {
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.75rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
+  transition: all 0.2s ease;
 }
 
-.table-responsive{
-    width: 100%;
-    overflow-x: auto;
-    background: var(--bg-card);
-    border-radius: 8px;
-    border: 1px solid var(--border-subtle);
+.btn:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #3730a3 100%);
+  box-shadow: 0 6px 14px rgba(79, 70, 229, 0.3);
+  transform: translateY(-1px);
 }
 
-.data-table{
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
+/* 7. Clinical Dynamic Data Tables */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
 }
 
-.data-table th,
-.data-table td{
-    padding: 1rem 1.25rem;
-    border-bottom: 1px solid var(--border-subtle);
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
 }
 
-.data-table th{
-    background-color: #f1f5f9;
-    color: var(--text-muted);
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-transform: uppercase;
+.data-table th {
+  background-color: #f8fafc;
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 1.1rem 1.25rem;
+  border-bottom: 2px solid var(--border-color);
 }
 
-.data-table tbody tr:hover{
-    background-color: #f8fafc;
+.data-table td {
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
 }
 
-.btn{
-    display: inline-block;
-    background-color: var(--secondary-color);
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s;
+.data-table tr:hover td {
+  background-color: #faf5ff; /* Subtle tint matching primary color on row hover */
 }
 
-.btn:hover{
-    background-color: #0f766e;
+.data-table tr:last-child td {
+  border-bottom: none;
 }
 
-.badge{
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    font-size: 0.85rem;
-    font-weight: 700;
-    border-radius: 50px;
-    text-transform: uppercase;
+/* 8. Clinical Status Badges */
+.badge {
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 50px;
+  letter-spacing: 0.2px;
 }
 
-.badge.normal{ background-color: #dcfce7; color: var(--color-normal); } 
-.badge.warning{ background-color: #fef9c3; color: var(--color-warning); } 
-.badge.critical{ background-color: #fee2e2; color: var(--color-critical); } 
-
+.badge.normal { background-color: #d1fae5; color: #065f46; }
+.badge.warning { background-color: #fef3c7; color: #92400e; }
+.badge.critical { background-color: #ffe4e6; color: #9f1239; }
