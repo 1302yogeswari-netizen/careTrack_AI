@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resident Medical Profile - CareTrackAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="navbar">
+    <div class="logo"> CareTrackAI</div>
+    <nav class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="residents.html">Residents</a>
+      <a href="health.html">Log Vitals</a>
+      <a href="medicine.html">Medicines</a>
+      <a href="ai.html">AI Analysis</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div style="margin-bottom: 1.5rem;">
+        <a href="residents.html" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">← Back to Main Roster Directory</a>
+    </div>
+
+    <div class="form-grid" style="grid-template-columns: 1fr 2fr;gap: 2rem; align-items: start;">
+
+        <section class="form-container" style="margin-bottom: 0;">
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+                <div style="width: 80px; height: 80px; background-color: var(--primary-light); color: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1rem auto; font-weight: bold;" id="profileInitials">
+            --
+          </div>
+
+            <h3 id="profileName" style="color: var(--text-main); font-size: 1.4rem; margin-bottom: 0.25rem;">Loading...</h3>
+            <span class="badge normal" id="profileRoom">Room --</span> 
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 1rem 0;">
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
+                <div><strong>Age / Gender:</strong><span id="profileAgeGender" style="float:right; color: var(--text-muted);">--</span></div>
+                <div><strong>Blood Type:</strong><span id="profileBlood" style="float: right; color: var(--text-muted);">--</span></div>
+                <div><strong>Emergency Contact:</strong><span id="profileContact" style="float: right; color: var(--text-muted);">--</span></div>
+                <div><strong>system Condition Status:</strong><span id="profileStatus" style="float: right; font-weight: 600;">--</span></div>
+            </div>
+        </section>
+
+        <div style="display: flex; flex-direction: column; gap: 2rem;"></div>
+
+        <section class="form-container" style="margin-bottom: 0;">
+            <h3 style="color: var(--text-main); margin-bottom: 1rem;">Clinical Vitals Tracking</h3>
+                <div class="table-responsive">
+                    <table class="data-table" style="font-size: 0.9rem;">
+                        <thead>
+                            <tr>
+                                <th>Data Recorded</th>
+                                <th>Blood Pressure</th>
+                                <th>Pulse</th>
+                                <th>Temp</th>
+                                <th>SpO2</th>
+                            </tr>
+                        </thead>
+                        <tbody id="profileVitalsHistoryBody">
+
+                        </tbody>
+                    </table> 
+                </div>
+        </section>
+
+        <section class="form-container" style="margin-bottom: 0;">
+            <h3 style="color: var(--text-main); margin-bottom: 1rem;">Active Prescriptions Manifest</h3>
+            <div class="table-responsive">
+                <table class="data-table" style="font-size: 0.9rem;">
+                    <thead>
+                        <tr>
+                            <th>Medication</th>
+                            <th>Dosage</th>
+                            <th>Time Scheduled</th>
+                        </tr>
+                    </thead>
+                    <tbody id="profileMedicationHistoryBody">
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
+</main>
+
+  <script src="app.js"></script>
+</body>
+</html>
