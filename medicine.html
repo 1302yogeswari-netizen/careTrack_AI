@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicines - CareTrackAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="logo"> CareTrackAI</div>
+        <nav class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="residents.html">Residents</a>
+            <a href="health.html">Log Vitals</a>
+            <a href="medicine.html" class="active">Medicines</a>
+            <a href="ai.html">AI Analysis</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2 style="margin-bottom: 1.5rem;">Medication Allocation & Logs</h2>
+
+        <section class="form-container">
+            <h3 style="margin-bottom: 1.25rem; color:var(--primary-color);">Prescribe New Medication</h3>
+            <form id="medicineForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="medResidentSelect">Select Resident</label>
+                        <select id="medResidentSelect" required>
+                            <option value="">-- Choose Profile --</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="medName">Medication Name</label>
+                        <input type="text" id="medName" required placeholder ="e.g. Metformin">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="medDosage">Dosage Volume</label>
+                        <input type="text" id="medDosage" required placeholder ="e.g. 500mg">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="medTime">Administration Time</label>
+                        <input type="text" id="medTime" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn" style="margin-top: 1rem;">Save Schedule</button>
+            </form>
+        </section>
+
+        <section>
+            <h3 style="margin-bottom: 1rem;">Daily Medication Manifest</h3>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Resident</th>
+                            <th>Medication</th>
+                            <th>Dosage</th>
+                            <th>Scheduled Time</th>
+                            <th>Adherence Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="medicineTableBody">
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Analysis - CareTrackAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo"> CareTrackAI</div>
+        <nav class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="residents.html">Residents</a>
+            <a href="health.html">Log Vitals</a>
+            <a href="medicine.html">Medicines</a>
+            <a href="ai.html" class="active">AI Analysis</a>
+    </nav>
+    </header>
+
+    <main class="container">
+        <h2 style="margin-bottom: 1.5rem;">AI Health Risk Engine</h2>
+        <section class="form-container" style="text-align: center; padding: 3rem 2rem;">
+            <h3 style="margin-bottom: 0.5rem; color: var(--primary-color);">Scan System Health Trends</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Running the diagnostics matrix screens logged records against safety thresholds to calculate clinical trajectory flags.
+            </p>
+            <button id="btnRunAnalysis" class="btn" style="font-size: 1rem; padding:1rem 2.5rem;">
+                Execute Analytical Assessment
+            </button>
+        </section>
+
+        <section id="aiResultsWrapper" style="display: none">
+            <h3 style="margin-bottom: 1rem; color: var(--text-main);">Generated Clinical Insights</h3>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <td>Resident</td>
+                            <td>Analyzed Metric</td>
+                            <td>Condition Flag</td>
+                            <td>AI Generated Care Advisory Recommendations</td>
+                        </tr>
+                    </thead>
+                    <tbody id="aiAnalysisTableBody">
+
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+    
+</body>
+</html>
