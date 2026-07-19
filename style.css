@@ -1,26 +1,21 @@
-/* ==========================================================================
-   CareTrackAI - Master UI Design System (css/style.css)
-   ========================================================================== */
 
-/* 1. Global Setup & Design Variables */
 :root {
-  /* Dynamic Premium Palette Overhaul */
-  --primary-color: #4f46e5;       /* Royal Midnight Indigo */
-  --primary-light: #eef2ff;       /* Soft Lavender Tint */
-  --text-main: #0f172a;           /* Deep Charcoal Slate */
-  --text-muted: #64748b;          /* Cool Steel Gray */
-  --bg-main: #f8fafc;             /* Clean Canvas Backdrop */
-  --bg-card: #ffffff;             /* Pure White Containers */
-  --border-color: #e2e8f0;        /* Minimalist Borders */
   
-  /* Vibrant & Attractive Health Status Palette */
-  --color-normal: #10b981;        /* Vivid Emerald */
-  --color-warning: #f59e0b;       /* Amber Gold */
-  --color-critical: #f43f5e;      /* Electric Rose/Red */
+  --primary-color: #4f46e5;       
+  --primary-light: #eef2ff;       
+  --text-main: #0f172a;           
+  --text-muted: #64748b;         
+  --bg-main: #f8fafc;            
+  --bg-card: #ffffff;            
+  --border-color: #e2e8f0;         
+  
+  --color-normal: #10b981;        
+  --color-warning: #f59e0b;      
+  --color-critical: #f43f5e;     
   
   --shadow-sm: 0 4px 6px -1px rgba(79, 70, 229, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   --shadow-md: 0 10px 15px -3px rgba(79, 70, 229, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
-  --radius: 12px;                 /* Slightly softer, modern corners */
+  --radius: 12px;                 
 }
 
 * {
@@ -37,7 +32,7 @@ body {
   padding-bottom: 3rem;
 }
 
-/* 2. Reusable Header Navigation Bar */
+
 .navbar {
   background: linear-gradient(135deg, #312e81 0%, #4f46e5 100%); /* Premium Deep Violet Gradient */
   color: #ffffff;
@@ -75,14 +70,14 @@ body {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-/* 3. Layout Containment */
+
 .container {
   max-width: 1200px;
   margin: 2.5rem auto;
   padding: 0 1.5rem;
 }
 
-/* 4. Modular Dashboard Cards & Sections */
+
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -129,7 +124,7 @@ body {
   margin-bottom: 2.5rem;
 }
 
-/* 5. Clean, Professional Forms styling */
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -166,7 +161,7 @@ body {
   box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
 }
 
-/* 6. Buttons & User Actions */
+
 .btn {
   background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
   color: #ffffff;
@@ -186,7 +181,7 @@ body {
   transform: translateY(-1px);
 }
 
-/* 7. Clinical Dynamic Data Tables */
+
 .table-responsive {
   width: 100%;
   overflow-x: auto;
@@ -220,14 +215,13 @@ body {
 }
 
 .data-table tr:hover td {
-  background-color: #faf5ff; /* Subtle tint matching primary color on row hover */
+  background-color: #faf5ff; 
 }
 
 .data-table tr:last-child td {
   border-bottom: none;
 }
 
-/* 8. Clinical Status Badges */
 .badge {
   display: inline-block;
   padding: 0.3rem 0.75rem;
